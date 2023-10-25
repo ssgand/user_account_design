@@ -1,0 +1,98 @@
+<div class="bg-blue-50 flex flex-col rounded-xl py-3 px-5 a">
+    <!-- <div class="flex-1 flex justify-center">
+      <img [src]="utility.userData.imageUrl" alt="" class='border-2 border-blue-900'  style="width: 180px; height: 180px; border-radius: 50%;">
+    </div> -->
+    <div class="flex-1 flex justify-center items-center">
+      <form action="" class="w-full" #userForm="ngForm"  novalidate> <!-- login form-->
+        <div class="flex flex-col px-8 gap-4">
+
+            <div class="flex-1 flex flex-col items-center gap-2 mt-5 mb-5">
+              <img [src]="utility.userData.imageUrl ? '../../assets/user.png' : utility.userData.imageUrl" alt="" class='border-2 border-blue-700' style="width: 180px; height: 180px; border-radius: 50%;">
+            </div>
+
+            <div class="flex flex-col w-full">
+              <label for="firstName"><b>First name</b></label>
+              <input class="px-4 py-2 inputText" placeholder="Enter first name" name="firstName" [(ngModel)]="utility.userData.firstName" required>
+              <!-- <input class="px-4 py-2 inputText" [class.invalid]="name.invalid && name.touched" type="text" [placeholder]="Enter first name" #name="ngModel" name="firstName" [(ngModel)]="utility.userData.firstName" required> -->
+            </div>
+
+            <div class="flex flex-col w-full">
+              <label for="lastName"><b>Last name</b></label>
+              <input class="px-4 py-2 inputText" type="text" placeholder="Enter last name" name="lastName" [(ngModel)]="utility.userData.lastName" required>
+            </div>
+
+            <div class="flex flex-col w-full">
+              <label for="email"><b>email</b></label>
+              <input class="px-4 py-2 inputText" type="email" placeholder="Enter email" name="email" [(ngModel)]="utility.userData.email" required>
+            </div>
+
+            <div class="flex flex-row gap-3">
+              <label for="gender"><b>Gender</b></label>
+              <div class="flex flex-col w-full items-start text-center">
+                <div class="flex gap-1">
+                  <input class="px-4 py-2 inputText" type="radio" name="gender" value="male" [(ngModel)]="utility.userData.gender" required>
+                  <label>MALE</label>
+                </div>
+                <div class="flex gap-1">
+                  <input class="px-4 py-2 inputText" type="radio" name="gender" value="female" [(ngModel)]="utility.userData.gender" required>
+                  <label>FEMALE</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col w-full">
+              <label for="age"><b>Age</b></label>
+              <input class="px-4 py-2 inputText" type="number" placeholder="Enter your age" name="age" [(ngModel)]="utility.userData.age" required>
+            </div>
+
+            <div class="flex flex-col w-full">
+              <label for="birthDate"><b>Date of birth</b></label>
+              <input class="px-4 py-2 inputText" type="date" placeholder="Enter last name" name="birthDate" [(ngModel)]="utility.userData.birthDate" required>
+            </div>
+
+            <div class="flex flex-row gap-3 w-full">
+              <label for="maritalStatus" class="flex-2"><b>Marital status</b></label>
+              <div class="flex-1 flex w-full items-start text-center gap-3">
+
+                <div class="flex gap-1 flex-col items-start">
+                  <div class="flex gap-1">
+                    <input class="px-4 py-2 inputText" type="radio" name="maritalStatus" value="single" [(ngModel)]="utility.userData.maritalStatus" required>
+                    <label>SINGLE</label>
+                  </div>
+                  <div class="flex gap-1">
+                    <input class="px-4 py-2 inputText" type="radio" name="maritalStatus" value="married" [(ngModel)]="utility.userData.maritalStatus" required>
+                    <label>MARRIED</label>
+                  </div>
+                </div>
+
+                <div class="flex gap-1 flex-col">
+                  <div class="flex gap-1">
+                    <input class="px-4 py-2 inputText" type="radio" name="maritalStatus" value="divorced" [(ngModel)]="utility.userData.maritalStatus" required>
+                    <label>DIVORCED</label>
+                  </div>
+                  <div class="flex gap-1">
+                    <input class="px-4 py-2 inputText" type="radio" name="maritalStatus" value="widowed" [(ngModel)]="utility.userData.maritalStatus" required>
+                    <label>WIDOWED</label>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="flex flex-col w-full">
+              <label for="nationality"><b>Nationality</b></label>
+              <input class="px-4 py-2 inputText" type="text"  name="nationality" placeholder="Enter nationality" [(ngModel)]="utility.userData.nationality" required>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <div class="flex w-full gap-1">
+                <button class="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 hover:from-blue-800 hover:to-blue-800 py-2 w-3/4 text-white text-lg font-semibold rounded-lg" (click)="onCancel()">cancel</button>
+                <button class="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 hover:from-blue-800 hover:to-blue-800 py-2 w-3/4 text-white text-lg font-semibold rounded-lg">Edit</button>
+                <button class="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 hover:from-blue-800 hover:to-blue-800 py-2 w-3/4 text-white text-lg font-semibold rounded-lg" (click)="onLogout()">Logout</button>
+              </div>
+            </div>
+
+        </div>
+      </form>
+    </div>
+</div>
